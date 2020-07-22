@@ -1,0 +1,12 @@
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/bin/Debug/netcoreapp3.1/BewerbungMitDirk.deps.json
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/bin/Debug/netcoreapp3.1/BewerbungMitDirk.runtimeconfig.json
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/bin/Debug/netcoreapp3.1/BewerbungMitDirk.runtimeconfig.dev.json
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/bin/Debug/netcoreapp3.1/BewerbungMitDirk.dll
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/bin/Debug/netcoreapp3.1/BewerbungMitDirk.pdb
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/obj/Debug/netcoreapp3.1/BewerbungMitDirk.csprojAssemblyReference.cache
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/obj/Debug/netcoreapp3.1/BewerbungMitDirk.AssemblyInfoInputs.cache
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/obj/Debug/netcoreapp3.1/BewerbungMitDirk.AssemblyInfo.cs
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/obj/Debug/netcoreapp3.1/BewerbungMitDirk.csproj.CoreCompileInputs.cache
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/obj/Debug/netcoreapp3.1/BewerbungMitDirk.dll
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/obj/Debug/netcoreapp3.1/BewerbungMitDirk.pdb
+/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/obj/Debug/netcoreapp3.1/BewerbungMitDirk.genruntimeconfig.cache
