@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{E179AC29-E87B-4F2F-9D6B-72F29AD3531B}|Default">
+  <MonoDevelop.Ide.ItemProperties.BewerbungsWertung PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="bewerbungswertung.cs">
+    <Files>
+      <File FileName="bewerbungswertung.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BewerbungsWertung" expanded="True">
+            <Node name="BewerbungsWertung" expanded="True">
+              <Node name="bewerbungswertung.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

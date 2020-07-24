@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/BewerbungsWertung.csproj": {}
+    "/Users/andreaskretschmann/Projects/c#_projekte/BewertungsTool/BewertungsTool/BewerbungsWertung.csproj": {}
   },
   "projects": {
-    "/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/BewerbungsWertung.csproj": {
+    "/Users/andreaskretschmann/Projects/c#_projekte/BewertungsTool/BewertungsTool/BewerbungsWertung.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/BewerbungsWertung.csproj",
+        "projectUniqueName": "/Users/andreaskretschmann/Projects/c#_projekte/BewertungsTool/BewertungsTool/BewerbungsWertung.csproj",
         "projectName": "BewerbungsWertung",
-        "projectPath": "/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/BewerbungsWertung.csproj",
+        "projectPath": "/Users/andreaskretschmann/Projects/c#_projekte/BewertungsTool/BewertungsTool/BewerbungsWertung.csproj",
         "packagesPath": "/Users/andreaskretschmann/.nuget/packages/",
-        "outputPath": "/Users/andreaskretschmann/Projects/BewerbungMitDirk/BewerbungMitDirk/obj/",
+        "outputPath": "/Users/andreaskretschmann/Projects/c#_projekte/BewertungsTool/BewertungsTool/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/andreaskretschmann/.config/NuGet/NuGet.Config"
