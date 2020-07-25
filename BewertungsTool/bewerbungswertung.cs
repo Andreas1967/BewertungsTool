@@ -28,7 +28,7 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
 
         public int erstelleAnzahlKriterien()
         {
-            Console.WriteLine("\tBitte gegben Sie ein, wie viele Bewerberkriterien Sie bewerten wollen: \n\n\n\t"); //(wie bekomme ich hier eine eingerückte Eingabezeile hin? - eine an Dirk gemeinte Frage)
+            Console.WriteLine("\tBitte gegben Sie ein, wie viele Bewerberkriterien Sie bewerten wollen: \n\n\n\t"); //(wie bekomme ich hier eine eingerückte Eingabezeile hin? - eine an Dirk gemeinte Frage - gemeint ist die Eingabe des Users in der Konsole.... so dass sie nicht an Stelle 0 steht...)
             bool hatGeklappt = false;
             do
             {
@@ -69,14 +69,14 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
 
         public int erstelleGewichtungDesKriteriums(int index, int AnzahlKriterien)
         {
-            int restProzent;
+            int restProzent = ' ';
             bool hatGeklappt = false;
             if (index == 0)
             {
                 restProzent = 100;
             }
 
-            else if (index > 0 || index < AnzahlKriterien)
+            else if (index > 0 || index < AnzahlKriterien)//hier muss ich noch weiterschreiben... Es soll eogentlich so sein, dass beim letzten Kriterium die verbleibende Prozentzahl automatisch hinterlegt wird, so dass alles immer auf 100 % kommt.
             {
 
             }
@@ -85,7 +85,6 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
                 {
                     restProzent = restProzent - Eigenschaften[i].Gewichtung;
                 }
-                
             }
             if (index == AnzahlKriterien)
             {
@@ -112,8 +111,6 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
                 {
                     Console.WriteLine("Bitte eine Zahl zwischen 0 und {0} eingeben:", restProzent);
                 }
-                
-                //restProzent = restProzent - Eigenschaften[index].Gewichtung;
             } while (hatGeklappt == false);
             return restProzent;
         }
@@ -145,135 +142,7 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
             } while (hatGeklappt == false);
             return Eigenschaften[index].Punkte;
         }
- //#######################################
-        /*public void Erstellen()
-        {
-            int eingabeGewichtung = 0, eingabeNote = 0, restProzent = 100;
-            Console.WriteLine("\tBitte gegben Sie ein, wie viele Bewerberkriterien Sie bewerten wollen: \n\n\n\t"); //(wie bekomme ich hier eine eingerückte Eingabezeile hin? - eine an Dirk gemeinte Frage)
 
-            bool hatGeklappt = false;
-            do
-            {
-                try
-                {
-                    AnzahlKriterien = Convert.ToInt32(Console.ReadLine());
-                }
-                catch (Exception ex)
-                {
-                    hatGeklappt = false;
-                    Console.WriteLine(ex.Message);
-                    Console.WriteLine("\tSie haben sich leider verschrieben, bitte geben Sie eine Ganzzahl ein:");
-                }
-                Eigenschaften = new BewertungsKriterium[AnzahlKriterien];
-                hatGeklappt = true;
-            } while (hatGeklappt == false);*/
-
-            /*for (int i = 0; i < AnzahlKriterien; i++)
-            {
-                #region Bezeichnung
-
-
-                if (i == 0)
-                {
-                    Console.WriteLine("\tBeginnen wir mit dem " + (i + 1) + ". Bewertungskriterium:\n\t");
-                }
-                else
-                {
-                    Console.WriteLine("\tWeiter geht es mit dem " + (i + 1) + ". Bewertungskriterium:\n\t");
-                }
-                Eigenschaften[i].Bezeichnung = Console.ReadLine();
-                Console.WriteLine("\tOK. Die " + (i + 1) + " Eigenschaft nennen Sie " + Eigenschaften[i].Bezeichnung + ".\n\t");*/
-
-                //#endregion
-
-                //#region Gewichtung
-
-                /*Console.WriteLine("\tNun geben Sie bitte ein, wie wichtig Ihnen " + Eigenschaften[i].Bezeichnung + " als Bewertungskriterium ist.\n\n\tSie können noch " + restProzent + "% vergeben:\n\t");
-
-                do
-                {
-                    try
-                    {
-                        eingabeGewichtung = Convert.ToInt32(Console.ReadLine());
-                        hatGeklappt = true;
-                    }
-                    catch (SystemException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-
-                        meineException = ex;
-                        Console.WriteLine("\tBitte eine Zahl zwischen 0 und  " + restProzent + " eingeben.\n\t\n");
-
-                        hatGeklappt = false;
-                    }
-                    if (eingabeGewichtung >= 0 && eingabeGewichtung <= restProzent)
-                    {
-
-                        Eigenschaften[i].Gewichtung = eingabeGewichtung;
-                    }
-                    else
-                    {
-                        hatGeklappt = false;
-                        Console.WriteLine("\tBitte eine Zahl zwischen 0 und  " + restProzent + " eingeben.\n\t");
-
-                        
-                    }
-
-
-                } while (hatGeklappt == false);
-
-                restProzent = restProzent - eingabeGewichtung;
-
-               
-                }*/
-
-               // #endregion
-                //#region Note
-
-                /*Console.WriteLine("\tNun können Sie 0-10 Punkte vergeben, um das Kriterium  -" + Eigenschaften[i].Bezeichnung +
-                    "- des Bewerbers zu bewerten. " +
-                    "\n\n\t 0 Punkte steht für unterirdisch schlecht" +
-                    "\n\n\t 10 Punkte erhält ein Überflieger in seinem Gebiet");
-
-                if (i > 0)
-                {
-                    Console.WriteLine("Bitte 0 bis 10 Punkte vergeben:");
-                }
-
-                do
-                {
-                    try
-                    {
-                        eingabeNote = Convert.ToInt32(Console.ReadLine());
-
-                        hatGeklappt = true;
-                    }
-                    catch (SystemException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-
-                        meineException = ex;
-                        if (meineException != null)
-                        {
-                            hatGeklappt = false;
-                            Console.WriteLine("\tBitte eine Punktzahl zwischen 0 und 10 eingeben.\n\t\n");
-                        }
-                    }
-                    if (eingabeNote >= 0 && eingabeNote <= 10)
-                    {
-                        Eigenschaften[i].Punkte = eingabeNote;
-                    }
-                    else
-                    {
-                        hatGeklappt = false;
-                        Console.WriteLine("\tBitte eine Punktzahl zwischen 0 und 10 eingeben.\n\t\n");
-                    }
-                } while (!hatGeklappt);
-                #endregion
-
-            }*/
-        
-        #region fasseZusammen
         public void fasseZusammen()
         {
             Console.WriteLine("\tIhre Bewertungen:");
@@ -287,17 +156,14 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
                     Eigenschaften[i].Punkte);
             }
         }
-        #endregion
 
         int rechnung = 0, ergebnis = 0;
         int maxDurchschittPunktezahl;
         double prozentErgebnis;
-        //int anzahlKriterien = 1;
+       
 
         public void zeigeZwischenErgebnis()
         {
-            //anzahlKriterien = arrayLänge;
-
             for (int i = 0; i < AnzahlKriterien; i++)
             {
                 rechnung = Eigenschaften[i].Gewichtung * Eigenschaften[i].Punkte;
