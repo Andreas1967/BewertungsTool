@@ -6,7 +6,7 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
     class Nutzwert
     {
         BewertungsKriterium[] Eigenschaften;
-        public static int AnzahlKriterien = ' ';   //habe ich als Eigenschaft in der Klasse, da sie auch in mehreren                      Methoden verwendet werden muss 
+        public static int AnzahlKriterien;   
         public struct BewertungsKriterium
         {
             public string Bezeichnung;
@@ -28,7 +28,7 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
 
         public int erstelleAnzahlKriterien()
         {
-            Console.WriteLine("\tBitte gegben Sie ein, wie viele Bewerberkriterien Sie bewerten wollen: \n\n\n\t"); //(wie bekomme ich hier eine eingerückte Eingabezeile hin? - eine an Dirk gemeinte Frage - gemeint ist die Eingabe des Users in der Konsole.... so dass sie nicht an Stelle 0 steht...)
+            Console.WriteLine("\tBitte gegben Sie ein, wie viele Bewerberkriterien Sie bewerten wollen: \n\n\n\t"); 
             bool hatGeklappt = false;
             do
             {
@@ -67,30 +67,8 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
             return Eigenschaften[index].Bezeichnung;
         }
 
-        public int erstelleGewichtungDesKriteriums(int index, int AnzahlKriterien)
+        int fehlerFangenGewichtung(bool hatGeklappt, int index, int restProzent)
         {
-            int restProzent = ' ';
-            bool hatGeklappt = false;
-            if (index == 0)
-            {
-                restProzent = 100;
-            }
-
-            else if (index > 0 || index < AnzahlKriterien)//hier muss ich noch weiterschreiben... Es soll eogentlich so sein, dass beim letzten Kriterium die verbleibende Prozentzahl automatisch hinterlegt wird, so dass alles immer auf 100 % kommt.
-            {
-
-            }
-            {
-                for (int i = 1; i < AnzahlKriterien; i++)
-                {
-                    restProzent = restProzent - Eigenschaften[i].Gewichtung;
-                }
-            }
-            if (index == AnzahlKriterien)
-            {
-                Eigenschaften[index].Gewichtung = restProzent;
-            }
-            Console.WriteLine("\tGeben Sie bitte ein, wie wichtig Ihnen {0} als Bewertungskriterium ist.\n\n\tSie können noch  {1} % vergeben:\n\t", Eigenschaften[index].Bezeichnung, restProzent);
             do
             {
                 try
@@ -103,7 +81,7 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
                     Console.WriteLine("Sie haben sich verschrieben, bitte geben Sie eine Ganzzahl ein:");
                     continue;
                 }
-                if (Eigenschaften[index].Gewichtung > 0 && Eigenschaften[index].Gewichtung < restProzent)
+                if (Eigenschaften[index].Gewichtung >= 0 && Eigenschaften[index].Gewichtung <= restProzent)
                 {
                     hatGeklappt = true;
                 }
@@ -113,6 +91,35 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
                 }
             } while (hatGeklappt == false);
             return restProzent;
+        }
+
+        public void erstelleGewichtungDesKriteriums(int index, int AnzahlKriterien)
+        {
+            int restProzent = 100;
+            bool hatGeklappt = false;
+            if (index == 0)
+            {
+                Console.WriteLine("\tGeben Sie bitte ein, wie wichtig Ihnen {0} als Bewertungskriterium ist.\n\n\tSie können noch  {1} % vergeben:\n\t", Eigenschaften[index].Bezeichnung, restProzent);
+                fehlerFangenGewichtung(hatGeklappt, index, restProzent);
+            }
+            for (int i = 0; i < AnzahlKriterien; i++)
+            {
+                restProzent = restProzent - Eigenschaften[i].Gewichtung;
+            }
+
+            if (index > 0 && index < AnzahlKriterien -1)
+            {
+                Console.WriteLine("\tGeben Sie bitte ein, wie wichtig Ihnen {0} als Bewertungskriterium ist.\n\n\tSie können noch  {1} % vergeben:\n\t", Eigenschaften[index].Bezeichnung, restProzent);
+                fehlerFangenGewichtung(hatGeklappt, index, restProzent);
+            }
+            else if (index == AnzahlKriterien - 1)
+            {
+                Eigenschaften[index].Gewichtung = restProzent;
+                Console.WriteLine("Für die letzte Eigenschaft vergeben Sie automatisch die verbleibenden Anteile von {0} Prozent.", restProzent);
+                Eigenschaften[index].Gewichtung = restProzent;
+            }
+
+            
         }
 
         public int erstellePunktzahlFürKriterium(int index)
@@ -185,7 +192,7 @@ namespace BewerbungsWertung //könnte man auch alles zu einer klassischen, umfas
             }
             else if (prozentErgebnis < 60)
             {
-                Console.WriteLine("\n\tDa kann man ja noch mal drüber schauen. Vielleicht verdient dieswer Mensch eine Chance?");
+                Console.WriteLine("\n\tDa kann man ja noch mal drüber schauen. Vielleicht verdient dieser Mensch eine Chance?");
             }
             else if (prozentErgebnis < 85)
             {
