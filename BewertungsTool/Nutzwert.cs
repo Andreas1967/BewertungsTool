@@ -5,7 +5,7 @@ namespace BewerbungsWertung
     {
 
         BewertungsKriterium[] Eigenschaften;
-        public static int AnzahlKriterien;
+        public static int AnzahlKriterien { get; private set; }
         public struct BewertungsKriterium
         {
             public string Bezeichnung;
@@ -161,6 +161,7 @@ namespace BewerbungsWertung
                     Eigenschaften[i].Gewichtung,
                     Eigenschaften[i].Punkte);
             }
+            
         }
 
         int rechnung = 0, ergebnis = 0;
